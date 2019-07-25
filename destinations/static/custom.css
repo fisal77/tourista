@@ -1,0 +1,27 @@
+.row {
+	margin-bottom: 20px;
+}
+
+#thumb {
+	max-height: 142px
+}
+
+#large-image {
+	margin-bottom: 20px;
+}
+
+#btn-update, #btn-delete {
+	margin-top: 50px;
+	margin-right: 20px;
+
+}
+
+.container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.card {
+	height: 330px;
+}
+

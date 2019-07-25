@@ -5,12 +5,26 @@
 {% block content %}
 <br>
 <div class="row">
-  {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
-  {% endfor %}
+	{% for destination in destinations %}
+	<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+			<div class="card-deck">
+					<div class="card border-white shadow mb-5 rounded-lg">
+						<!-- <div class="card-header"><H5>{{destination.name}}</H5></div> -->
+						{% if destination.pretty_picture %}
+						<img id="thumb" src="{{destination.pretty_picture.url}}" class="card-img-top" alt="{{destination.name}}"/>
+						{% endif %}
+						<div class="card-body">
+							<div class="card-img-overlay">
+							<B class="card-title text-white">{{destination.name}}</B>
+						</div>
+							<h5 class="card-title">{{destination.name}}</h5>
+							<p class="card-text">{{destination.activities}}</p>
+							<a href="{% url 'destination-detail' destination.id %}" class="stretched-link"></a>
+						</div>
+					</div>
+			</div>
+	</div>
+	{% endfor %}
 </div>
 {% endblock content %}
+
